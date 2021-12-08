@@ -1,21 +1,24 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { useFonts } from "expo-font";
+import { NavigationContainer } from "@react-navigation/native";
+import MainDrawer from "./navigators/MainDrawer";
 
 export default function App() {
+  const [loaded] = useFonts({
+    Pacifico: require("./assets/fonts/Pacifico-Regular.ttf"),
+    NunitoSansBold: require("./assets/fonts/NunitoSans-Bold.ttf"),
+    NunitoSansRegular: require("./assets/fonts/NunitoSans-Regular.ttf"),
+    NunitoSansSemiBold: require("./assets/fonts/NunitoSans-SemiBold.ttf"),
+    NunitoSansExtraBold: require("./assets/fonts/NunitoSans-ExtraBold.ttf"),
+  });
+
+  if (!loaded) {
+    return null;
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <MainDrawer />
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
