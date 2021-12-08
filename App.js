@@ -2,6 +2,8 @@ import React from "react";
 import { useFonts } from "expo-font";
 import { NavigationContainer } from "@react-navigation/native";
 import MainDrawer from "./navigators/MainDrawer";
+import { Provider } from "react-redux";
+import store from "./redux/store";
 
 export default function App() {
   const [loaded] = useFonts({
@@ -17,8 +19,10 @@ export default function App() {
   }
 
   return (
-    <NavigationContainer>
-      <MainDrawer />
-    </NavigationContainer>
+    <Provider store={store}>
+      <NavigationContainer>
+        <MainDrawer />
+      </NavigationContainer>
+    </Provider>
   );
 }
