@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     shadowColor: "#333",
     shadowOpacity: 0.3,
     shadowRadius: 2,
-    marginHorizontal: 4,
+    marginHorizontal: 5,
     marginVertical: 6,
   },
   cardContent: {

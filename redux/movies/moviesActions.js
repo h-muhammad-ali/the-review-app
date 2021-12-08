@@ -4,7 +4,6 @@ import {
   FETCH_MOVIES_FAILURE,
   SET_SELECTED_MOVIE,
 } from "./moviesTypes";
-import axios from "axios";
 
 export const fetchMoviesRequest = () => ({
   type: FETCH_MOVIES_REQUEST,
@@ -27,13 +26,16 @@ export const setSelectedMovie = (id) => ({
 
 export const fetchMovies = () => (dispatch) => {
   dispatch(fetchMoviesRequest());
-  axios
-    .get("../../movies-data.json")
-    .then((response) => {
-      const movies = response?.data ?? [];
-      dispatch(fetchMoviesSuccess(movies));
-    })
-    .catch((error) => {
-      dispatch(fetchMoviesFailure(error?.message));
-    });
+  const movies = require("../../data/movies-data.json");
+  console.log(movies);
+  dispatch(fetchMoviesSuccess(movies));
+  // axios
+  //   .get("../../data/movies-data.json")
+  //   .then((response) => {
+  //     const movies = response?.data ?? [];
+  //     dispatch(fetchMoviesSuccess(movies));
+  //   })
+  //   .catch((error) => {
+  //     dispatch(fetchMoviesFailure(error?.message));
+  //   });
 };

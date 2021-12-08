@@ -9,11 +9,12 @@ const Home = ({ navigation }) => {
   return (
     <View style={globalStyles.container}>
       <FlatList
+        showsVerticalScrollIndicator={false}
         data={genres}
         keyExtractor={(item, index) => index}
         renderItem={({ item }) => (
           <TouchableOpacity
-            onPress={() => navigation?.navigate("ReviewDetails")}
+            onPress={() => navigation?.navigate("Movies", {genre: item})}
           >
             <Card>
               <Text style={globalStyles.titleText}>{item}</Text>
