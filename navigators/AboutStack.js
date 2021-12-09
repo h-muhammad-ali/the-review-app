@@ -4,12 +4,14 @@ import About from "../screens/About";
 
 const Stack = createNativeStackNavigator();
 
-const AboutStack = () => {
-  return (
-    <Stack.Navigator initialRouteName="About">
-      <Stack.Screen options={{headerShown: false}} name="About" component={About} />
-    </Stack.Navigator>
-  );
-};
+const AboutStack = () => (
+  <Stack.Navigator initialRouteName="About">
+    <Stack.Screen
+      options={{ headerShown: false }}
+      name="About"
+      component={About}
+    />
+  </Stack.Navigator>
+);
 
 export default AboutStack;

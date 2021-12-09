@@ -5,7 +5,7 @@ import MainDrawer from "./navigators/MainDrawer";
 import { Provider } from "react-redux";
 import store from "./redux/store";
 
-export default function App() {
+const App = () => {
   const [loaded] = useFonts({
     Pacifico: require("./assets/fonts/Pacifico-Regular.ttf"),
     NunitoSansBold: require("./assets/fonts/NunitoSans-Bold.ttf"),
@@ -25,4 +25,6 @@ export default function App() {
       </NavigationContainer>
     </Provider>
   );
-}
+};
+
+export default App;

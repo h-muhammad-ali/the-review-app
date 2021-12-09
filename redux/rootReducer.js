@@ -1,10 +1,8 @@
 import { combineReducers } from "redux";
-import moviesReducer from './movies/moviesReducer';
-import genreCardsReducer from './genreCards/genreCardsReducer';
+import moviesReducer from "./movies/moviesReducer";
 
 const rootReducer = combineReducers({
-    movies: moviesReducer,
-    genreCards: genreCardsReducer,
-})
+  movies: moviesReducer,
+});
 
-export default rootReducer; 
+export default rootReducer;

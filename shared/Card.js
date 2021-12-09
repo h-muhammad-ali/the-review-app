@@ -1,13 +1,11 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
 
-const Card = (props) => {
-  return (
-    <View style={styles.card}>
-      <View style={styles.cardContent}>{props.children}</View>
-    </View>
-  );
-};
+const Card = (props) => (
+  <View style={styles?.card}>
+    <View style={styles?.cardContent}>{props?.children}</View>
+  </View>
+);
 
 const styles = StyleSheet.create({
   card: {

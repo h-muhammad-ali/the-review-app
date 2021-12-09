@@ -29,13 +29,4 @@ export const fetchMovies = () => (dispatch) => {
   const movies = require("../../data/movies-data.json");
   console.log(movies);
   dispatch(fetchMoviesSuccess(movies));
-  // axios
-  //   .get("../../data/movies-data.json")
-  //   .then((response) => {
-  //     const movies = response?.data ?? [];
-  //     dispatch(fetchMoviesSuccess(movies));
-  //   })
-  //   .catch((error) => {
-  //     dispatch(fetchMoviesFailure(error?.message));
-  //   });
 };
