@@ -9,14 +9,7 @@ const Drawer = createDrawerNavigator();
 const MainDrawer = () => {
   function getHeaderVisibility(route) {
     const routeName = getFocusedRouteNameFromRoute(route) ?? "Home";
-    switch (routeName) {
-      case "Home":
-        return true;
-      case "Movies":
-        return false;
-      case "MovieDetails":
-        return false;
-    }
+    return routeName === "Home";
   }
 
   return (

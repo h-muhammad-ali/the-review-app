@@ -7,7 +7,7 @@ import Card from "../shared/Card";
 
 const DetailsModal = ({ route }) => {
   const movie = useSelector((state) =>
-    state?.movies.movies?.find((entity) => entity?.id === route?.params?.id)
+    state?.movies?.movies?.find((entity) => entity?.id === route?.params?.id)
   );
 
   return (
@@ -33,12 +33,10 @@ const DetailsModal = ({ route }) => {
           </>
         }
         ListFooterComponent={
-          <>
-            <Card>
-              <Text style={styles?.heading}>Synopsis</Text>
-              <Text>{movie?.storyline}</Text>
-            </Card>
-          </>
+          <Card>
+            <Text style={styles?.heading}>Synopsis</Text>
+            <Text>{movie?.storyline}</Text>
+          </Card>
         }
         data={movie?.actors}
         keyExtractor={(item, index) => index}

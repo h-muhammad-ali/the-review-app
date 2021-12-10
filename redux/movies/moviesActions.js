@@ -27,6 +27,5 @@ export const setSelectedMovie = (id) => ({
 export const fetchMovies = () => (dispatch) => {
   dispatch(fetchMoviesRequest());
   const movies = require("../../data/movies-data.json");
-  console.log(movies);
   dispatch(fetchMoviesSuccess(movies));
 };

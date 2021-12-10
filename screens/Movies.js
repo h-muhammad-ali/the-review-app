@@ -22,7 +22,7 @@ const Movies = ({ route, navigation }) => {
       <FlatList
         showsVerticalScrollIndicator={false}
         data={movies?.filter((movie) =>
-          movie.genres.includes(route?.params?.genre)
+          movie?.genres?.includes(route?.params?.genre)
         )}
         keyExtractor={(item, index) => index}
         renderItem={({ item }) => (
